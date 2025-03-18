@@ -1,4 +1,5 @@
 pyyaml
+yaml
 argparse
 pytest
 pytest-cov
