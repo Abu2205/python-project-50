@@ -7,6 +7,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def test_generate_diff_plain():
     
+
     file1 = os.path.join(BASE_DIR, "test_data", "file1.json")
     file2 = os.path.join(BASE_DIR, "test_data", "file2.json")
     
