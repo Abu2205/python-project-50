@@ -1,4 +1,5 @@
 pyyaml
 argparse
 pytest
+pytest-cov
 ruff
