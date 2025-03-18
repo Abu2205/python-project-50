@@ -1,8 +1,12 @@
 import json
+
 import yaml
+
 import os
 
+
 def parse_file(file_path):
+    
     ext = os.path.splitext(file_path)[1]
     with open(file_path) as file:
         if ext in ['.json']:
