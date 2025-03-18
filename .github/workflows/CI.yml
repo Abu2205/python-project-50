@@ -22,6 +22,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install uv
+          pip install -e .
           
       - name: Run linter
         run: make lint
