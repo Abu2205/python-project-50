@@ -3,7 +3,8 @@ def format_value(value, depth):
         lines = []
         indent = " " * (depth * 4)
         for key, val in value.items():
-            lines.append(f"{indent}    {key}: {format_value(val, depth + 1)}")
+            lines.append(f"{indent}    {key}: {
+                format_value(val, depth + 1)}")
         return "{{\n{}\n{}}}".format("\n".join(lines), indent)
     return stringify(value)
 
@@ -28,16 +29,21 @@ def format_stylish(diff_tree, depth=0):
             children = format_stylish(node["children"], depth + 1)
             lines.append(f"{indent}    {key}: {{\n{children}\n{indent}    }}")
         elif node_type == "added":
-            lines.append(f"{indent}  + {key}: {format_value(node['value'], depth + 1)}")
+            lines.append(f"{indent}  + {key}: {
+                format_value(node['value'], depth + 1)}")
         elif node_type == "removed":
-            lines.append(f"{indent}  - {key}: {format_value(node['value'], depth + 1)}")
+            lines.append(f"{indent}  - {key}: {
+                format_value(node['value'], depth + 1)}")
         elif node_type == "unchanged":
-            lines.append(f"{indent}    {key}: {format_value(node['value'], depth + 1)}")
+            lines.append(f"{indent}    {key}: {
+                format_value(node['value'], depth + 1)}")
         elif node_type == "changed":
             lines.append(
-                f"{indent}  - {key}: {format_value(node['old_value'], depth + 1)}"
+                f"{indent}  - {key}: {
+                    format_value(node['old_value'], depth + 1)}"
             )
             lines.append(
-                f"{indent}  + {key}: {format_value(node['new_value'], depth + 1)}"
+                f"{indent}  + {key}: {
+                    format_value(node['new_value'], depth + 1)}"
             )
     return "\n".join(lines)
