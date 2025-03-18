@@ -6,16 +6,15 @@ from gendiff.parser import parse_file
 
 
 def generate_diff(file1, file2, format_name):
-    
     data1 = parse_file(file1)
     data2 = parse_file(file2)
     diff_tree = build_diff(data1, data2)
 
-    if format_name == 'stylish':
+    if format_name == "stylish":
         return f"{{\n{format_stylish(diff_tree)}\n}}"
-    elif format_name == 'plain':
+    elif format_name == "plain":
         return format_plain(diff_tree)
-    elif format_name == 'json':
+    elif format_name == "json":
         return format_json(diff_tree)
     else:
         raise ValueError(f"Unknown format: {format_name}")
