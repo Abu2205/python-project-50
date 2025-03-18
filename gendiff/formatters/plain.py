@@ -31,6 +31,10 @@ def format_plain(diff, path=""):
             new_value = format_value(node["new_value"])
             lines.append(
                 f"Property '{
-                    property_path}' was updated. From {old_value} to {new_value}")
+                    property_path
+                    }' was updated. From {
+                        old_value} to {
+                        new_value}"
+                    )
 
     return "\n".join(lines)
