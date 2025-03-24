@@ -7,3 +7,6 @@ test_stylish
 pycache
 demonstrate.project
 gendiff/__pycache__
+tests/__pycache__
+gendiff/scripts/__pycache__
+gendiff/formatters/__pycache__
