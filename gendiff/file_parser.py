@@ -1,7 +1,7 @@
 import json
-import yaml
-
 import os
+
+import yaml
 
 
 def parse_file(file_path):
@@ -16,6 +16,7 @@ def parse_data(data, ext):
         return yaml.safe_load(data)
     else:
         raise ValueError(f"Unsupported file format: {ext}")
+    
     
 def load_data(file_path):
     ext = os.path.splitext(file_path)[1]
