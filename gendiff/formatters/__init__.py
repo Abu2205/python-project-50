@@ -14,4 +14,4 @@ def get_formatter(format_name):
 
 
 def apply_formatter(diff_tree, format_name):
-    return get_formatter(format_name) (diff_tree)
+    return get_formatter(format_name)(diff_tree)
