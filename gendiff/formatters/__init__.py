@@ -14,9 +14,4 @@ def get_formatter(format_name):
 
 
 def apply_formatter(diff_tree, format_name):
-    formatter = get_formatter(format_name)
-
-    if format_name == "stylish":
-        return f"{{\n{formatter(diff_tree)}\n}}"
-
-    return formatter(diff_tree)
+    return get_formatter(format_name) (diff_tree)
