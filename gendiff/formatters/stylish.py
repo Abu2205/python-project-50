@@ -25,6 +25,7 @@ def format_stylish(diff_tree, depth=0):
     for node in diff_tree:
         key = node["key"]
         node_type = node["type"]
+
         if node_type == "nested":
             children = format_stylish(node["children"], depth + 1)
             lines.append(f"{indent}    {key}: {{\n{children}\n{indent}    }}")
@@ -46,4 +47,5 @@ def format_stylish(diff_tree, depth=0):
                 f"{indent}  + {key}: {
                     format_value(node['new_value'], depth + 1)}"
             )
-    return "\n".join(lines)
+    formatted_diff = "\n".join(lines)
+    return f"{{\n{formatted_diff}\n{indent}}}"
